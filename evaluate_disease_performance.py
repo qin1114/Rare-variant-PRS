@@ -6,7 +6,7 @@ import os, argparse, sys, math
 import numpy as np
 from sklearn.metrics import roc_auc_score
 
-sys.path.append('/cpfs01/projects-HDD/cfff-afe2df89e32e_HDD/public/qmh_data/Proj_RarePRS/code')
+sys.path.append('../')
 from utils.evaluation_matrix_binary import calculate_liability_r2, calculate_OR_value, calculate_IDI_value
 
 
