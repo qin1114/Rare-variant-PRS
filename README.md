@@ -4,7 +4,11 @@ In this work, building on recent advances in functional annotation of both codin
 
 ## Getting Started
 - Clone this repository using the following git command:
-https://github.com/qin1114/Rare-variant-PRS/tree/main
+```
+git clone https://github.com/qin1114/Rare-variant-PRS.git
+```
+- Alternatively, download the source files from the github website (https://github.com/qin1114/Rare-variant-PRS/tree/main)
+- Create a new conda environment using requirement.txt. 
 
 
 ## Data Preprocessing
