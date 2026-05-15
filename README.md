@@ -4,7 +4,7 @@ In this work, building on recent advances in functional annotation of both codin
 
 ## Getting Started
 - Clone this repository using the following git command:
-
+https://github.com/qin1114/Rare-variant-PRS/tree/main
 
 
 ## Data Preprocessing
