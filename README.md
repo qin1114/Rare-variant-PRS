@@ -1,16 +1,13 @@
 ## Rare-variant risk scores complement common-variant polygenic scores for disease risk prediction and stratification
----
 In this work, building on recent advances in functional annotation of both coding and noncoding regions (e.g., the STAAR framework), we comprehensively evaluate linear and nonlinear approaches for constructing rare-variant PRS and assess their predictive performance across 31 complex traits and 464 disease endpoints using WGS data from the UK Biobank. We examine performance at both the population level, and, critically, at the individual level, and perform longitudinal survival analyses.
 
 
 ## Getting Started
----
 - Clone this repository using the following git command:
 
 
 
 ## Data Preprocessing
----
 To generate burden scores input, please follow [STAARpipeline](https://github.com/li-lab-genetics/STAAR):
 1. Generate Genomic Data Structure (GDS) file follow [STAARpipeline-Tutorial](https://github.com/xihaoli/STAARpipeline-Tutorial)
 <br/>
@@ -43,7 +40,6 @@ eid  31-0.0  21003-0.0  22009-0.1  22009-0.2  22009-0.3  22009-0.4  22009-0.5  2
 
 
 ## PRScs
----
 We generate common-variant PRS using [PRScs](https://github.com/getian107/PRScs):
 - Prepare snplist matched between common variants in WGS and HapMap3 first, we provide the HMap3 list aligned with GRCh37/hg19 in ./data/map.rd. Run match_HM3_rsid.R to obtained matched snplist.
 - Please run [PRScs](https://github.com/getian107/PRScs) according to its instruction. The cvPRS results must have the following format (including the header line):
@@ -60,7 +56,6 @@ IID	FID	X30610	SCORE
 
 
 ## Model Training
----
 We provide training code for five predictive models of quantitative or disease traits. Take LightGBM as an example:
 ```
 python train_disease_LightGBM.py -cutoff 0.01 -disease_select E4_DM2 -rare_gene Coding 
@@ -92,7 +87,6 @@ python train_quantitative_RVTrans.py -cutoff 0.01 -rare_gene Coding -device cuda
 <br/>
 
 ## Model Evaluation
----
 Prediction performance was assessed using three complementary metrics: (i) the correlation R between predicted and observed phenotypes (on the liability scale for disease traits); (ii) the odds ratio (OR) comparing individuals in the top 1% of the rvPRS distribution with the remainder of the sample; and (iii) the integrated discrimination improvement (IDI) obtained when adding rvPRS to a model that already included cvPRS, using the top 1% as the risk threshold. 
 ```
 python evaluate_quantitative_performance.py -model_name LightGBM -cutoff 0.01 -rare_gene Coding 
