@@ -112,7 +112,6 @@ for model in [model_name]:
             # load common PRS
             common_df = pd.read_csv(f"{cvprs_file}/{pheno_name}/PRS-CS_PRS_test.txt", sep="\t")
             common_df = common_df[["IID", "SCORE"]]
-            common_df["SCORE"] = -common_df["SCORE"]
             common_df.columns = ["IID", "Common_PRS"]
             final_data = pd.merge(model_df, common_df[["IID", "Common_PRS"]], on="IID")
             
