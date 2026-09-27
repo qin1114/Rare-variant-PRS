@@ -1,5 +1,5 @@
 """
-python evaluate_quantitative_performance.py -model_name LightGBM -cutoff 0.01 -rare_gene Coding -cov_file ../../data/Biochemistry_matched_data.csv -pheno_file ../../data/pheno_ls_5%.txt -save_dir ../../results/ -model_file ../../results -split_dir ../../data/split -cvprs_file ../../results/PRS-CS/Continuous
+python evaluate_quantitative_performance.py -model_name LightGBM -cutoff 0.001 -rare_gene Coding -cov_file ../../data/Biochemistry_matched_data.csv -pheno_file ../../data/pheno_ls_5%.txt -save_dir ../../results/ -model_file ../../results -split_dir ../../data/split -cvprs_file ../../results/PRS-CS/Continuous
 """
 import pandas as pd
 import os, argparse, sys, math
