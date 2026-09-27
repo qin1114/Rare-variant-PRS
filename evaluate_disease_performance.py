@@ -122,8 +122,9 @@ for model in [model_name]:
             rare_val_pred = model_val_df["Probability"].values
 
             auc_val = roc_auc_score(y_val, rare_val_pred)
+            K = np.sum((final_data['disease']==1).values) / len(final_data)
             try:
-                r2_rare = calculate_liability_r2(final_data, use_common=True)["R2_lia"]
+                r2_rare = calculate_liability_r2(final_data, use_common=True, K=K)["R2_lia"]
                 if r2_rare<0:
                     r_rare = 0
                 else:
@@ -132,7 +133,7 @@ for model in [model_name]:
                 r_rare = -1
 
             try:
-                r_common = calculate_liability_r2(final_data, use_common=False, score_name='Common_PRS')["R2_lia"]
+                r_common = calculate_liability_r2(final_data, use_common=False, score_name='Common_PRS', K=K)["R2_lia"]
                 if r_common<0:
                     r_common = 0
                 else:
